@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CV - Dominique Farías</title>
+    <style>
+        /* Estilos generales del cuerpo */
+        body {
+            width: 800px;
+            /* Aumenté ligeramente el ancho para que quepa mejor la info */
+            background: whitesmoke;
+            margin: 60px auto;
+            display: flex;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            /* Agregué una fuente por defecto para mejor lectura */
+        }
+
+        /* Sección izquierda */
+        #izquierda {
+            flex: 1.2;
+            /* Le di un poco más de espacio a la izquierda */
+            background: rgb(248, 248, 255);
+            padding: 20px;
+        }
+
+        #izquierda img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        #izquierda h3 {
+            border-bottom: 2px solid grey;
+            padding-bottom: 5px;
+            color: grey;
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
+
+        #izquierda p {
+            text-align: justify;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: #333;
+        }
+
+        #izquierda ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        #izquierda li {
+            color: #333;
+            margin: 8px 0;
+            font-size: 0.9em;
+            word-wrap: break-word;
+            /* Para que el correo no se salga si es muy largo */
+        }
+
+        /* Sección derecha */
+        #derecha {
+            flex: 3;
+            padding: 20px 30px;
+        }
+
+        #derecha h1 {
+            border-bottom: 2px solid rgb(219, 63, 128);
+            padding-bottom: 5px;
+            color: black;
+            margin-top: 5px;
+            text-transform: uppercase;
+            font-size: 1.8em;
+        }
+
+        #derecha h2 {
+            margin-top: 5px;
+            color: rgb(100, 100, 100);
+            font-size: 1.2em;
+            font-weight: normal;
+        }
+
+        #derecha h3 {
+            border-bottom: 2px solid lightpink;
+            padding-bottom: 3px;
+            color: rgb(202, 97, 146);
+            margin-top: 25px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-size: 1em;
+        }
+
+        #derecha h6 {
+            color: rgb(69, 61, 75);
+            margin: 2px 0 10px 0;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+
+        /* Ajuste de los artículos para que se vean ordenados */
+        #derecha article {
+            display: block;
+            /* Cambiado a block para mejor manejo de listas y textos */
+            margin: 15px 0;
+        }
+
+        #derecha ul {
+            list-style-type: disc;
+            /* Pone puntitos a la lista */
+            margin-left: 20px;
+            padding: 0;
+        }
+
+        #derecha li {
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
+        .item-titulo {
+            font-weight: bold;
+            font-size: 1em;
+            color: #000;
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="izquierda">
+        <img src="blurry.jpg" alt="Foto de perfil">
+
+        <article>
+            <h3>CONTACTO</h3>
+            <ul>
+                <li><strong>Ubicación:</strong> Valencia, España</li>
+                <li><strong>Teléfono:</strong> (34) 641 075 508</li>
+                <li><strong>Email:</strong> dominiquefarias21@gmail.com</li>
+                <li><strong>Web:</strong> GitHub</li>
+            </ul>
+        </article>
+
+        <article>
+            <h3>SOBRE MÍ</h3>
+            <p>
+                Estudiante de Desarrollo de Aplicaciones Multiplataforma en España, con formación previa en Bachillerato
+                cursado en Chile.
+            </p>
+            <p>
+                Apasionada por la tecnología y su aplicación en la resolución de problemas reales. Persona proactiva,
+                curiosa y con una fuerte motivación por el aprendizaje continuo y la mejora constante.
+            </p>
+        </article>
+
+        <article>
+            <h3>IDIOMAS</h3>
+            <ul>
+                <li>• Español (Nativo)</li>
+                <li>• Inglés B2 (Intermedio - Avanzado)</li>
+            </ul>
+        </article>
+    </section>
+
+    <section id="derecha">
+        <h1>Dominique Farías Osorio</h1>
+        <h2>Estudiante DAM (Desarrollo de Aplicaciones Multiplataforma)</h2>
+
+        <article>
+            <h3>EDUCACIÓN</h3>
+
+            <span class="item-titulo">Formación profesional de desarrollo aplicaciones multiplataforma</span>
+            <h6>CEAC FP Valencia Formación profesional, Valencia, España | 2025 - Presente</h6>
+
+            <span class="item-titulo">Bachillerato Científico - Humanista</span>
+            <h6>Colegio Árabe de Viña del Mar, Viña del Mar, Chile | 2021 - 2024</h6>
+        </article>
+
+        <article>
+            <h3>EXPERIENCIA LABORAL</h3>
+
+            <span class="item-titulo">PICKER</span>
+            <h6>ABAN S.A | Enero - Abril 2025, Viña del Mar, Chile</h6>
+            <ul>
+                <li>Preparación y gestión de pedidos online para clientes.</li>
+                <li>Control de calidad y revisión de productos antes de la entrega.</li>
+                <li>Colaboración con diferentes áreas para optimizar los tiempos de entrega.</li>
+            </ul>
+        </article>
+
+        <article>
+            <h3>HABILIDADES (APTITUDES)</h3>
+            <ul>
+                <li>Liderazgo</li>
+                <li>Comunicación asertiva</li>
+                <li>Resolución de problemas</li>
+                <li>Trabajo en equipo</li>
+            </ul>
+        </article>
+        <article>
+            <h3>HABILIDADES TÉCNICAS</h3>
+            <ul>
+                <li>• Programación en Python</li>
+                <li>• SQL y HTML</li>
+                <li>• Uso básico de SO Windows</li>
+            </ul>
+        </article>
+    </section>
+</body>
+
+</html>
