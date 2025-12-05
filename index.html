@@ -4,212 +4,351 @@
 <head>
     <meta charset="UTF-8">
     <title>CV - Dominique Farías</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
     <style>
-        /* Estilos generales del cuerpo */
-        body {
-            width: 800px;
-            /* Aumenté ligeramente el ancho para que quepa mejor la info */
-            background: whitesmoke;
-            margin: 60px auto;
-            display: flex;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-            /* Agregué una fuente por defecto para mejor lectura */
+        /* --- Variables de Color (Tema Tierra) --- */
+        :root {
+            --bg-page: #EAE0D5;
+            /* Fondo de la página web */
+            --sidebar-bg: #3A2C22;
+            /* Marrón Oscuro (Barra lateral) */
+            --sidebar-text: #F0E5D3;
+            /* Beige Claro (Texto barra lateral) */
+            --main-bg: #FFFFFF;
+            /* Blanco (Fondo contenido) */
+            --text-dark: #3A2C22;
+            /* Marrón Oscuro (Texto principal) */
+            --primary: #A87C62;
+            /* Terracota (Títulos principales) */
+            --accent: #8DC36E;
+            /* Verde (Subtítulos/Detalles) */
+            --line-color: #E0E0E0;
+            /* Gris muy suave para líneas sutiles */
         }
 
-        /* Sección izquierda */
+        /* --- Reset y General --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-page);
+            font-family: 'Lato', sans-serif;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        /* --- Contenedor Principal (La Hoja de Papel) --- */
+        .cv-container {
+            width: 900px;
+            background-color: var(--main-bg);
+            display: flex;
+            box-shadow: 0 15px 40px rgba(58, 44, 34, 0.15);
+            /* Sombra suave marrón */
+            border-radius: 8px;
+            overflow: hidden;
+            /* Para que la barra lateral respete el borde redondeado */
+        }
+
+        /* --- Barra Lateral (Izquierda) --- */
         #izquierda {
-            flex: 1.2;
-            /* Le di un poco más de espacio a la izquierda */
-            background: rgb(248, 248, 255);
-            padding: 20px;
+            flex: 0 0 32%;
+            /* Ocupa el 32% del ancho */
+            background-color: var(--sidebar-bg);
+            color: var(--sidebar-text);
+            padding: 40px 25px;
+            text-align: center;
+        }
+
+        /* Foto de perfil */
+        .profile-img-container {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 30px;
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            /* Borde Terracota */
+            overflow: hidden;
+            background-color: #fff;
         }
 
         #izquierda img {
             width: 100%;
-            border-radius: 10px;
-            margin-bottom: 15px;
+            height: 100%;
+            object-fit: cover;
         }
 
+        /* Títulos en la barra lateral */
         #izquierda h3 {
-            border-bottom: 2px solid grey;
-            padding-bottom: 5px;
-            color: grey;
-            margin-top: 20px;
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary);
+            /* Terracota */
             font-size: 1.1em;
+            letter-spacing: 2px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 5px;
+            text-align: left;
         }
 
-        #izquierda p {
-            text-align: justify;
-            line-height: 1.4;
-            margin-bottom: 20px;
-            font-size: 0.9em;
-            color: #333;
+        /* Texto en la barra lateral */
+        #izquierda p,
+        #izquierda li {
+            font-size: 0.95em;
+            line-height: 1.6;
+            text-align: left;
+            opacity: 0.9;
         }
 
         #izquierda ul {
             list-style: none;
-            padding: 0;
-            margin: 10px 0;
+            text-align: left;
         }
 
         #izquierda li {
-            color: #333;
-            margin: 8px 0;
-            font-size: 0.9em;
-            word-wrap: break-word;
-            /* Para que el correo no se salga si es muy largo */
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
         }
 
-        /* Sección derecha */
-        #derecha {
-            flex: 3;
-            padding: 20px 30px;
+        /* Iconos simulados con CSS para la info de contacto */
+        .icon-text {
+            display: flex;
+            flex-direction: column;
         }
 
-        #derecha h1 {
-            border-bottom: 2px solid rgb(219, 63, 128);
-            padding-bottom: 5px;
-            color: black;
-            margin-top: 5px;
+        .contact-label {
+            font-weight: 700;
+            color: var(--accent);
+            /* Verde */
+            font-size: 0.8em;
             text-transform: uppercase;
-            font-size: 1.8em;
+        }
+
+        /* --- Sección Principal (Derecha) --- */
+        #derecha {
+            flex: 1;
+            padding: 50px 40px;
+            background-color: var(--main-bg);
+        }
+
+        /* Encabezado Nombre */
+        #derecha h1 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary);
+            /* Terracota */
+            font-size: 2.8em;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 5px;
         }
 
         #derecha h2 {
-            margin-top: 5px;
-            color: rgb(100, 100, 100);
-            font-size: 1.2em;
-            font-weight: normal;
-        }
-
-        #derecha h3 {
-            border-bottom: 2px solid lightpink;
-            padding-bottom: 3px;
-            color: rgb(202, 97, 146);
-            margin-top: 25px;
-            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
+            color: var(--accent);
+            /* Verde */
+            font-size: 1.1em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
             text-transform: uppercase;
-            font-size: 1em;
         }
 
-        #derecha h6 {
-            color: rgb(69, 61, 75);
-            margin: 2px 0 10px 0;
-            font-size: 0.85em;
-            font-weight: bold;
+        /* Títulos de Sección Derecha */
+        #derecha h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--primary);
+            /* Línea Terracota */
+            padding-bottom: 5px;
+            margin-top: 35px;
+            margin-bottom: 20px;
         }
 
-        /* Ajuste de los artículos para que se vean ordenados */
+        /* Artículos / Items */
         #derecha article {
-            display: block;
-            /* Cambiado a block para mejor manejo de listas y textos */
-            margin: 15px 0;
-        }
-
-        #derecha ul {
-            list-style-type: disc;
-            /* Pone puntitos a la lista */
-            margin-left: 20px;
-            padding: 0;
-        }
-
-        #derecha li {
-            margin-bottom: 5px;
-            line-height: 1.4;
+            margin-bottom: 25px;
         }
 
         .item-titulo {
-            font-weight: bold;
-            font-size: 1em;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.05em;
             color: #000;
             display: block;
-            margin-top: 10px;
+        }
+
+        .item-subtitulo {
+            color: var(--primary);
+            /* Terracota */
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        #derecha ul {
+            list-style: none;
+            margin-top: 8px;
+        }
+
+        #derecha li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        /* Bullet points personalizados (cuadraditos verdes) */
+        #derecha li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent);
+            /* Verde */
+            border-radius: 50%;
         }
     </style>
 </head>
 
 <body>
-    <section id="izquierda">
-        <img src="blurry.jpg" alt="Foto de perfil">
 
-        <article>
-            <h3>CONTACTO</h3>
-            <ul>
-                <li><strong>Ubicación:</strong> Valencia, España</li>
-                <li><strong>Teléfono:</strong> (34) 641 075 508</li>
-                <li><strong>Email:</strong> dominiquefarias21@gmail.com</li>
-                <li><strong>Web:</strong> GitHub</li>
-            </ul>
-        </article>
+    <div class="cv-container">
+        <section id="izquierda">
+            <div class="profile-img-container">
+                <img src="blurry.jpg" alt="Dominique Farías">
+            </div>
 
-        <article>
-            <h3>SOBRE MÍ</h3>
-            <p>
-                Estudiante de Desarrollo de Aplicaciones Multiplataforma en España, con formación previa en Bachillerato
-                cursado en Chile.
-            </p>
-            <p>
-                Apasionada por la tecnología y su aplicación en la resolución de problemas reales. Persona proactiva,
-                curiosa y con una fuerte motivación por el aprendizaje continuo y la mejora constante.
-            </p>
-        </article>
+            <article>
+                <h3>CONTACTO</h3>
+                <ul>
+                    <li>
+                        <div class="icon-text">
+                            <span class="contact-label">Ubicación</span>
+                            <span>Valencia, España</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-text">
+                            <span class="contact-label">Teléfono</span>
+                            <span>(34) 641 075 508</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-text">
+                            <span class="contact-label">Email</span>
+                            <span>dominiquefarias21@gmail.com</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-text">
+                            <span class="contact-label">Web</span>
+                            <a href="https://github.com/dominiquefarias"
+                                style="color: inherit; text-decoration: none;">GitHub/DominiqueFarias</a>
+                        </div>
+                    </li>
+                </ul>
+            </article>
 
-        <article>
-            <h3>IDIOMAS</h3>
-            <ul>
-                <li>• Español (Nativo)</li>
-                <li>• Inglés B2 (Intermedio - Avanzado)</li>
-            </ul>
-        </article>
-    </section>
+            <article>
+                <h3>SOBRE MÍ</h3>
+                <p>
+                    Estudiante de Desarrollo de Aplicaciones Multiplataforma en España, con bachillerato en Ciencias
+                    Humanas y Sociales previa en Chile.
+                </p>
+                <br>
+                <p>
+                    Apasionada por la tecnología y su aplicación en la resolución de problemas reales. Persona
+                    proactiva,
+                    curiosa y con una fuerte motivación por el aprendizaje continuo.
+                </p>
+            </article>
 
-    <section id="derecha">
-        <h1>Dominique Farías Osorio</h1>
-        <h2>Estudiante DAM (Desarrollo de Aplicaciones Multiplataforma)</h2>
+            <article>
+                <h3>IDIOMAS</h3>
+                <ul>
+                    <li>• Español (Nativo)</li>
+                    <li>• Inglés B2 (Intermedio - Avanzado)</li>
+                </ul>
+            </article>
+        </section>
 
-        <article>
-            <h3>EDUCACIÓN</h3>
+        <section id="derecha">
+            <h1>Dominique<br>Farías Osorio</h1>
+            <h2>Estudiante DAM (Desarrollo de Aplicaciones Multiplataforma)</h2>
 
-            <span class="item-titulo">Formación profesional de desarrollo aplicaciones multiplataforma</span>
-            <h6>CEAC FP Valencia Formación profesional, Valencia, España | 2025 - Presente</h6>
+            <article>
+                <h3>Educación</h3>
 
-            <span class="item-titulo">Bachillerato Científico - Humanista</span>
-            <h6>Colegio Árabe de Viña del Mar, Viña del Mar, Chile | 2021 - 2024</h6>
-        </article>
+                <div style="margin-bottom: 20px;">
+                    <span class="item-titulo">Formación Profesional DAM</span>
+                    <span class="item-subtitulo">CEAC FP Valencia | 2025 - Presente</span>
+                    <ul>
+                        <li>Especialización en desarrollo de software, bases de datos e interfaces.</li>
+                    </ul>
+                </div>
 
-        <article>
-            <h3>EXPERIENCIA LABORAL</h3>
+                <div>
+                    <span class="item-titulo">Bachillerato Científico - Humanista</span>
+                    <span class="item-subtitulo">Colegio Árabe de Viña del Mar, Chile | 2021 - 2024</span>
+                </div>
+            </article>
 
-            <span class="item-titulo">PICKER</span>
-            <h6>ABAN S.A | Enero - Abril 2025, Viña del Mar, Chile</h6>
-            <ul>
-                <li>Preparación y gestión de pedidos online para clientes.</li>
-                <li>Control de calidad y revisión de productos antes de la entrega.</li>
-                <li>Colaboración con diferentes áreas para optimizar los tiempos de entrega.</li>
-            </ul>
-        </article>
+            <article>
+                <h3>Experiencia Laboral</h3>
 
-        <article>
-            <h3>HABILIDADES (APTITUDES)</h3>
-            <ul>
-                <li>Liderazgo</li>
-                <li>Comunicación asertiva</li>
-                <li>Resolución de problemas</li>
-                <li>Trabajo en equipo</li>
-            </ul>
-        </article>
-        <article>
-            <h3>HABILIDADES TÉCNICAS</h3>
-            <ul>
-                <li>• Programación en Python</li>
-                <li>• SQL y HTML</li>
-                <li>• Uso básico de SO Windows</li>
-            </ul>
-        </article>
-    </section>
+                <span class="item-titulo">Picker (Gestión Logística)</span>
+                <span class="item-subtitulo">ABAN S.A | Enero - Abril 2025</span>
+                <ul>
+                    <li>Preparación y gestión eficiente de pedidos online.</li>
+                    <li>Control de calidad riguroso antes de la entrega final.</li>
+                    <li>Optimización de tiempos mediante trabajo colaborativo.</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>Habilidades Blandas</h3>
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <span
+                        style="background:#F0E5D3; padding: 5px 10px; border-radius: 4px; font-size: 0.9em;">Liderazgo</span>
+                    <span
+                        style="background:#F0E5D3; padding: 5px 10px; border-radius: 4px; font-size: 0.9em;">Comunicación
+                        asertiva</span>
+                    <span
+                        style="background:#F0E5D3; padding: 5px 10px; border-radius: 4px; font-size: 0.9em;">Resolución
+                        de problemas</span>
+                    <span style="background:#F0E5D3; padding: 5px 10px; border-radius: 4px; font-size: 0.9em;">Trabajo
+                        en equipo</span>
+                </div>
+            </article>
+
+            <article>
+                <h3>Habilidades Técnicas</h3>
+                <ul>
+                    <li><strong>Lenguajes:</strong> Python (Intermedio), SQL, HTML5/CSS3.</li>
+                    <li><strong>Herramientas:</strong> Git, GitHub, VS Code, SQLite, MySQL.</li>
+                    <li><strong>Sistemas:</strong> Windows, Linux (Básico).</li>
+                </ul>
+            </article>
+        </section>
+    </div>
+
 </body>
 
 </html>
