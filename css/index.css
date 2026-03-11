@@ -1,0 +1,213 @@
+/* --- Variables de Color (Tema Tierra) --- */
+:root {
+    --bg-page: #EAE0D5;
+    /* Fondo de la página web */
+    --sidebar-bg: #3A2C22;
+    /* Marrón Oscuro (Barra lateral) */
+    --sidebar-text: #F0E5D3;
+    /* Beige Claro (Texto barra lateral) */
+    --main-bg: #FFFFFF;
+    /* Blanco (Fondo contenido) */
+    --text-dark: #3A2C22;
+    /* Marrón Oscuro (Texto principal) */
+    --primary: #A87C62;
+    /* Terracota (Títulos principales) */
+    --accent: #8DC36E;
+    /* Verde (Subtítulos/Detalles) */
+    --line-color: #E0E0E0;
+    /* Gris muy suave para líneas sutiles */
+}
+
+/* --- Reset y General --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-page);
+    font-family: 'Lato', sans-serif;
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* --- Contenedor Principal (La Hoja de Papel) --- */
+.cv-container {
+    width: 900px;
+    background-color: var(--main-bg);
+    display: flex;
+    box-shadow: 0 15px 40px rgba(58, 44, 34, 0.15);
+    /* Sombra suave marrón */
+    border-radius: 8px;
+    overflow: hidden;
+    /* Para que la barra lateral respete el borde redondeado */
+}
+
+/* --- Barra Lateral (Izquierda) --- */
+#izquierda {
+    flex: 0 0 32%;
+    /* Ocupa el 32% del ancho */
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    padding: 40px 25px;
+    text-align: center;
+}
+
+/* Foto de perfil */
+.profile-img-container {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    border: 4px solid var(--primary);
+    /* Borde Terracota */
+    overflow: hidden;
+    background-color: #fff;
+}
+
+#izquierda img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Títulos en la barra lateral */
+#izquierda h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary);
+    /* Terracota */
+    font-size: 1.1em;
+    letter-spacing: 2px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 5px;
+    text-align: left;
+}
+
+/* Texto en la barra lateral */
+#izquierda p,
+#izquierda li {
+    font-size: 0.95em;
+    line-height: 1.6;
+    text-align: left;
+    opacity: 0.9;
+}
+
+#izquierda ul {
+    list-style: none;
+    text-align: left;
+}
+
+#izquierda li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Iconos simulados con CSS para la info de contacto */
+.icon-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-label {
+    font-weight: 700;
+    color: var(--accent);
+    /* Verde */
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+/* --- Sección Principal (Derecha) --- */
+#derecha {
+    flex: 1;
+    padding: 50px 40px;
+    background-color: var(--main-bg);
+}
+
+/* Encabezado Nombre */
+#derecha h1 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary);
+    /* Terracota */
+    font-size: 2.8em;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 5px;
+}
+
+#derecha h2 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--accent);
+    /* Verde */
+    font-size: 1.1em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+/* Títulos de Sección Derecha */
+#derecha h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--primary);
+    /* Línea Terracota */
+    padding-bottom: 5px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+/* Artículos / Items */
+#derecha article {
+    margin-bottom: 25px;
+}
+
+.item-titulo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.05em;
+    color: #000;
+    display: block;
+}
+
+.item-subtitulo {
+    color: var(--primary);
+    /* Terracota */
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+}
+
+#derecha ul {
+    list-style: none;
+    margin-top: 8px;
+}
+
+#derecha li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* Bullet points personalizados (cuadraditos verdes) */
+#derecha li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent);
+    /* Verde */
+    border-radius: 50%;
+}
