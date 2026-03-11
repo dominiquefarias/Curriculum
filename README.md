@@ -53,7 +53,6 @@ Soy una apasionada de la tecnología enfocada en el **desarrollo de software y l
 ¿Quieres charlar sobre tecnología o colaborar en un proyecto?
 
 - **Email:** [dominiquefarias21@gmail.com](mailto:dominiquefarias21@gmail.com)
-- **LinkedIn:** [Tu Perfil Aquí](https://linkedin.com/in/tu-usuario) *(No olvides añadirlo!)*
 - **Ubicación:** Mislata, Valencia 🇪🇸
 
 ---
