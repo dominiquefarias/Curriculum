@@ -1,24 +1,17 @@
-/* --- Variables de Color (Tema Tierra) --- */
+/* --- Variables de Color --- */
 :root {
     --bg-page: #EAE0D5;
-    /* Fondo de la página web */
     --sidebar-bg: #3A2C22;
-    /* Marrón Oscuro (Barra lateral) */
     --sidebar-text: #F0E5D3;
-    /* Beige Claro (Texto barra lateral) */
     --main-bg: #FFFFFF;
-    /* Blanco (Fondo contenido) */
     --text-dark: #3A2C22;
-    /* Marrón Oscuro (Texto principal) */
+    --text-muted: #555;
     --primary: #A87C62;
-    /* Terracota (Títulos principales) */
     --accent: #8DC36E;
-    /* Verde (Subtítulos/Detalles) */
-    --line-color: #E0E0E0;
-    /* Gris muy suave para líneas sutiles */
+    --line-color: #E8E8E8;
 }
 
-/* --- Reset y General --- */
+/* --- Reset --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -34,36 +27,33 @@ body {
     padding: 40px 20px;
 }
 
-/* --- Contenedor Principal (La Hoja de Papel) --- */
+/* --- Contenedor Principal --- */
 .cv-container {
-    width: 900px;
+    width: 920px;
     background-color: var(--main-bg);
     display: flex;
-    box-shadow: 0 15px 40px rgba(58, 44, 34, 0.15);
-    /* Sombra suave marrón */
+    box-shadow: 0 15px 40px rgba(58, 44, 34, 0.18);
     border-radius: 8px;
     overflow: hidden;
-    /* Para que la barra lateral respete el borde redondeado */
 }
 
-/* --- Barra Lateral (Izquierda) --- */
+/* ==========================================
+   SIDEBAR IZQUIERDO
+   ========================================== */
 #izquierda {
-    flex: 0 0 32%;
-    /* Ocupa el 32% del ancho */
+    flex: 0 0 31%;
     background-color: var(--sidebar-bg);
     color: var(--sidebar-text);
-    padding: 40px 25px;
+    padding: 40px 22px;
     text-align: center;
 }
 
-/* Foto de perfil */
 .profile-img-container {
-    width: 160px;
-    height: 160px;
+    width: 155px;
+    height: 155px;
     margin: 0 auto 30px;
     border-radius: 50%;
     border: 4px solid var(--primary);
-    /* Borde Terracota */
     overflow: hidden;
     background-color: #fff;
 }
@@ -74,27 +64,24 @@ body {
     object-fit: cover;
 }
 
-/* Títulos en la barra lateral */
 #izquierda h3 {
     font-family: 'Poppins', sans-serif;
     color: var(--primary);
-    /* Terracota */
-    font-size: 1.1em;
-    letter-spacing: 2px;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 5px;
+    font-size: 0.85em;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-top: 28px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 6px;
     text-align: left;
 }
 
-/* Texto en la barra lateral */
-#izquierda p,
-#izquierda li {
-    font-size: 0.95em;
-    line-height: 1.6;
+#izquierda p {
+    font-size: 0.9em;
+    line-height: 1.7;
     text-align: left;
-    opacity: 0.9;
+    opacity: 0.88;
 }
 
 #izquierda ul {
@@ -103,12 +90,13 @@ body {
 }
 
 #izquierda li {
-    margin-bottom: 12px;
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-bottom: 13px;
     display: flex;
     align-items: flex-start;
 }
 
-/* Iconos simulados con CSS para la info de contacto */
 .icon-text {
     display: flex;
     flex-direction: column;
@@ -117,97 +105,180 @@ body {
 .contact-label {
     font-weight: 700;
     color: var(--accent);
-    /* Verde */
-    font-size: 0.8em;
+    font-size: 0.75em;
     text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 1px;
 }
 
-/* --- Sección Principal (Derecha) --- */
+#izquierda a {
+    color: var(--sidebar-text);
+    text-decoration: none;
+    font-size: 0.88em;
+    opacity: 0.9;
+}
+
+#izquierda a:hover {
+    color: var(--accent);
+}
+
+/* Skills tags en sidebar */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    text-align: left;
+}
+
+.skills-list li {
+    display: block;
+    margin-bottom: 0;
+}
+
+.skill-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(168, 124, 98, 0.5);
+    color: var(--sidebar-text);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.82em;
+    line-height: 1.4;
+}
+
+/* ==========================================
+   SECCIÓN PRINCIPAL DERECHA
+   ========================================== */
 #derecha {
     flex: 1;
-    padding: 50px 40px;
+    padding: 45px 38px;
     background-color: var(--main-bg);
 }
 
-/* Encabezado Nombre */
 #derecha h1 {
     font-family: 'Poppins', sans-serif;
     color: var(--primary);
-    /* Terracota */
-    font-size: 2.8em;
+    font-size: 2.6em;
     text-transform: uppercase;
     line-height: 1.1;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
 }
 
 #derecha h2 {
     font-family: 'Poppins', sans-serif;
     color: var(--accent);
-    /* Verde */
-    font-size: 1.1em;
+    font-size: 0.9em;
     font-weight: 600;
-    letter-spacing: 1px;
-    margin-bottom: 40px;
+    letter-spacing: 1.5px;
+    margin-bottom: 36px;
     text-transform: uppercase;
 }
 
-/* Títulos de Sección Derecha */
 #derecha h3 {
     font-family: 'Poppins', sans-serif;
     color: var(--text-dark);
-    font-size: 1.2em;
+    font-size: 0.85em;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     border-bottom: 2px solid var(--primary);
-    /* Línea Terracota */
-    padding-bottom: 5px;
-    margin-top: 35px;
-    margin-bottom: 20px;
+    padding-bottom: 6px;
+    margin-top: 30px;
+    margin-bottom: 18px;
 }
 
-/* Artículos / Items */
 #derecha article {
-    margin-bottom: 25px;
+    margin-bottom: 10px;
+}
+
+/* Entradas individuales (trabajo, educación, proyecto) */
+.entry {
+    margin-bottom: 20px;
 }
 
 .item-titulo {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 1.05em;
-    color: #000;
+    font-size: 1em;
+    color: #1a1a1a;
     display: block;
+    margin-bottom: 2px;
 }
 
 .item-subtitulo {
     color: var(--primary);
-    /* Terracota */
-    font-size: 0.9em;
+    font-size: 0.85em;
     font-weight: 600;
     margin-bottom: 8px;
     display: block;
 }
 
+.item-subtitulo a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.item-subtitulo a:hover {
+    text-decoration: underline;
+}
+
 #derecha ul {
     list-style: none;
-    margin-top: 8px;
+    margin-top: 6px;
 }
 
 #derecha li {
     position: relative;
-    padding-left: 20px;
-    margin-bottom: 8px;
-    color: #555;
+    padding-left: 18px;
+    margin-bottom: 6px;
+    color: var(--text-muted);
+    font-size: 0.93em;
+    line-height: 1.55;
 }
 
-/* Bullet points personalizados (cuadraditos verdes) */
 #derecha li::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 8px;
+    top: 7px;
     width: 6px;
     height: 6px;
     background-color: var(--accent);
-    /* Verde */
     border-radius: 50%;
+}
+
+#derecha a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+#derecha a:hover {
+    text-decoration: underline;
+}
+
+/* Grid de habilidades técnicas */
+.tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+}
+
+.tech-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.tech-label {
+    font-weight: 700;
+    font-size: 0.78em;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 2px;
+}
+
+.tech-group span:last-child {
+    font-size: 0.9em;
+    color: var(--text-muted);
 }
