@@ -1,14 +1,16 @@
-/* --- Variables de Color --- */
+/* --- Variables de Color (paleta del portafolio en versión clara: lavanda + menta) --- */
 :root {
-    --bg-page: #EAE0D5;
-    --sidebar-bg: #3A2C22;
-    --sidebar-text: #F0E5D3;
-    --main-bg: #FFFFFF;
-    --text-dark: #3A2C22;
-    --text-muted: #555;
-    --primary: #A87C62;
-    --accent: #8DC36E;
-    --line-color: #E8E8E8;
+    --bg-page: #E4DBF5;
+    --sidebar-bg: #EDE7FA;
+    --sidebar-text: #2A2440;
+    --main-bg: #FBF8FF;
+    --text-dark: #2A2440;
+    --text-muted: #5E5873;
+    --primary: #7C3AED;
+    --primary-soft: rgba(124, 58, 237, 0.08);
+    --accent: #1E6E60;
+    --line-color: #E2DAF2;
+    --border-strong: #CFC3EA;
 }
 
 /* --- Reset --- */
@@ -23,7 +25,8 @@ body {
     font-family: 'Lato', sans-serif;
     color: var(--text-dark);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 40px 20px;
 }
 
@@ -32,7 +35,7 @@ body {
     width: 920px;
     background-color: var(--main-bg);
     display: flex;
-    box-shadow: 0 15px 40px rgba(58, 44, 34, 0.18);
+    box-shadow: 0 24px 48px -16px rgba(124, 58, 237, 0.25), 0 0 0 1px rgba(124, 58, 237, 0.06);
     border-radius: 8px;
     overflow: hidden;
 }
@@ -55,7 +58,7 @@ body {
     border-radius: 50%;
     border: 4px solid var(--primary);
     overflow: hidden;
-    background-color: #fff;
+    background-color: var(--main-bg);
 }
 
 #izquierda img {
@@ -72,7 +75,7 @@ body {
     text-transform: uppercase;
     margin-top: 28px;
     margin-bottom: 14px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid var(--border-strong);
     padding-bottom: 6px;
     text-align: left;
 }
@@ -137,8 +140,8 @@ body {
 
 .skill-tag {
     display: inline-block;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(168, 124, 98, 0.5);
+    background: var(--primary-soft);
+    border: 1px solid rgba(124, 58, 237, 0.3);
     color: var(--sidebar-text);
     padding: 4px 10px;
     border-radius: 20px;
@@ -200,7 +203,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 1em;
-    color: #1a1a1a;
+    color: var(--text-dark);
     display: block;
     margin-bottom: 2px;
 }
@@ -281,4 +284,169 @@ body {
 .tech-group span:last-child {
     font-size: 0.9em;
     color: var(--text-muted);
+}
+
+/* Etiqueta de prácticas (Experiencia) */
+.badge-practicas {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background-color: var(--primary-soft);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    color: var(--primary);
+    font-size: 0.7em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+    box-shadow: 0 2px 8px -2px rgba(124, 58, 237, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.badge-practicas:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px -2px rgba(124, 58, 237, 0.3);
+}
+
+/* ==========================================
+   BARRA DE ACCIONES (PORTAFOLIO Y PDF)
+   ========================================== */
+.barra-acciones {
+    width: 920px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.btn-accion {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 999px;
+    background-color: var(--primary);
+    color: var(--main-bg);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 10px 24px -8px rgba(124, 58, 237, 0.55);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    animation: aparecer-boton 0.5s ease backwards 0.3s;
+}
+
+.btn-accion + .btn-accion {
+    animation-delay: 0.45s;
+}
+
+.btn-accion:hover {
+    background-color: #6D28D9;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -10px rgba(124, 58, 237, 0.7);
+}
+
+.btn-accion:active {
+    transform: scale(0.97);
+}
+
+.btn-accion:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+
+@keyframes aparecer-boton {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-accion { animation: none; transition: none; }
+}
+
+/* ==========================================
+   IMPRESIÓN / PDF (A4)
+   ========================================== */
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    body {
+        padding: 0;
+        background-color: var(--main-bg);
+    }
+
+    .barra-acciones {
+        display: none;
+    }
+
+    .cv-container {
+        width: 100%;
+        min-height: 100vh;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    /* Compacta márgenes para que el CV quepa en una sola hoja A4 */
+    .cv-container {
+        zoom: 0.86;
+        height: 345mm; /* 297mm (A4) / zoom → la barra lateral llega al final de la hoja */
+        overflow: hidden;
+    }
+
+    #izquierda {
+        padding: 26px 20px;
+    }
+
+    #derecha {
+        padding: 30px 32px;
+    }
+
+    .profile-img-container {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 16px;
+    }
+
+    #izquierda h3 {
+        margin-top: 18px;
+        margin-bottom: 10px;
+    }
+
+    #izquierda li {
+        margin-bottom: 8px;
+    }
+
+    #derecha h2 {
+        margin-bottom: 18px;
+    }
+
+    #derecha h3 {
+        margin-top: 18px;
+        margin-bottom: 12px;
+    }
+
+    .entry {
+        margin-bottom: 12px;
+    }
+
+    #derecha li {
+        margin-bottom: 3px;
+    }
+
+    .entry,
+    .tech-group {
+        break-inside: avoid;
+    }
 }
