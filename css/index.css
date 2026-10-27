@@ -1,16 +1,17 @@
-/* --- Variables de Color (paleta del portafolio en versión clara: lavanda + menta) --- */
+/* --- Variables de Color (lavanda sobria, versión formal) --- */
 :root {
-    --bg-page: #E4DBF5;
-    --sidebar-bg: #EDE7FA;
-    --sidebar-text: #2A2440;
-    --main-bg: #FBF8FF;
-    --text-dark: #2A2440;
-    --text-muted: #5E5873;
-    --primary: #7C3AED;
-    --primary-soft: rgba(124, 58, 237, 0.08);
-    --accent: #1E6E60;
-    --line-color: #E2DAF2;
-    --border-strong: #CFC3EA;
+    --bg-page: #E9E5EF;
+    --sidebar-bg: #F1EDF6;
+    --sidebar-text: #241F31;
+    --main-bg: #FCFAFD;
+    --text-dark: #241F31;
+    --text-muted: #5A5468;
+    --primary: #4C3A7A;
+    --primary-hover: #3B2D61;
+    --primary-soft: rgba(76, 58, 122, 0.07);
+    --accent: #6A5A8C;
+    --line-color: #E4DEEC;
+    --border-strong: #D3CBE0;
 }
 
 /* --- Reset --- */
@@ -35,7 +36,7 @@ body {
     width: 920px;
     background-color: var(--main-bg);
     display: flex;
-    box-shadow: 0 24px 48px -16px rgba(124, 58, 237, 0.25), 0 0 0 1px rgba(124, 58, 237, 0.06);
+    box-shadow: 0 20px 44px -18px rgba(76, 58, 122, 0.22), 0 0 0 1px rgba(76, 58, 122, 0.05);
     border-radius: 8px;
     overflow: hidden;
 }
@@ -141,7 +142,7 @@ body {
 .skill-tag {
     display: inline-block;
     background: var(--primary-soft);
-    border: 1px solid rgba(124, 58, 237, 0.3);
+    border: 1px solid rgba(76, 58, 122, 0.25);
     color: var(--sidebar-text);
     padding: 4px 10px;
     border-radius: 20px;
@@ -293,19 +294,19 @@ body {
     padding: 2px 10px;
     border-radius: 999px;
     background-color: var(--primary-soft);
-    border: 1px solid rgba(124, 58, 237, 0.3);
+    border: 1px solid rgba(76, 58, 122, 0.25);
     color: var(--primary);
     font-size: 0.7em;
     font-weight: 600;
     letter-spacing: 0.5px;
     vertical-align: middle;
-    box-shadow: 0 2px 8px -2px rgba(124, 58, 237, 0.2);
+    box-shadow: 0 2px 6px -2px rgba(76, 58, 122, 0.15);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .badge-practicas:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px -2px rgba(124, 58, 237, 0.3);
+    box-shadow: 0 4px 10px -2px rgba(76, 58, 122, 0.22);
 }
 
 /* ==========================================
@@ -335,7 +336,7 @@ body {
     letter-spacing: 0.5px;
     text-decoration: none;
     cursor: pointer;
-    box-shadow: 0 10px 24px -8px rgba(124, 58, 237, 0.55);
+    box-shadow: 0 8px 20px -8px rgba(76, 58, 122, 0.45);
     transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
     animation: aparecer-boton 0.5s ease backwards 0.3s;
 }
@@ -345,9 +346,9 @@ body {
 }
 
 .btn-accion:hover {
-    background-color: #6D28D9;
+    background-color: var(--primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 14px 30px -10px rgba(124, 58, 237, 0.7);
+    box-shadow: 0 12px 26px -10px rgba(76, 58, 122, 0.55);
 }
 
 .btn-accion:active {
